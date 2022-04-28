@@ -1,0 +1,33 @@
+block variables
+
+
+doctype html
+html(class=isDesktop ? "desktop" : isTablet ? "tablet" : isPhone ? "phone" : "" lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    base(href="/")
+
+    title=meta.data.title
+
+    meta(name="description" content=meta.data.description)
+
+
+    link(href="main.css" rel="stylesheet")
+
+
+body
+
+include ./partials/preloader
+include ./partials/navigation
+
+include ./pages/about.pug
+include ./pages/collections.pug
+include ./pages/home.pug
+
+
+.content#content(data-template=template)
+
+block content
+
